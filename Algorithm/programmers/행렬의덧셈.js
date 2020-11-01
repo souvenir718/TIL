@@ -23,3 +23,17 @@ function arrPlus(arr1, arr2) {
   }
   return answer;
 }
+/*
+function solution(arr1, arr2) {
+    var answer = [[]];
+    // console.log(Number(arr1[0])+Number(arr2[0]))
+    for(let i=0; i<arr1.length; i++){
+        // answer[i][0] = Number(arr1[i][0])+Number(arr2[i][0])
+        answer[i] = [];
+        for(let j=0; j<arr1[i].length; j++){
+            answer[i][j] = Number(arr1[i][j])+Number(arr2[i][j]);
+        }
+    }
+    return answer;
+}
+*/
