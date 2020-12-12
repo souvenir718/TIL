@@ -19,3 +19,5 @@
 7.  [배열 내장함수 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20%EB%B0%B0%EC%97%B4%20%EB%82%B4%EC%9E%A5%ED%95%A8%EC%88%98.md)
 
 8.  [이벤트 동작 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20%EC%9D%B4%EB%B2%A4%ED%8A%B8%EC%9D%98%20%EB%8F%99%EC%9E%91.md)
+
+9. [Hoisting 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Hositing.md)
