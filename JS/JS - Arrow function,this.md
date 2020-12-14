@@ -41,6 +41,8 @@ const func1 = (num) => { const num = 10; }; // function 키워드 생략 가능
 
 ### this
 
+ 자바스크립트에서 모든 함수는 실행될 때마다 함수 내부에 `this` 라는 객체가 추가된다. `arguments`라는 유사 배열 객체와 함께 함수 내부로 암묵적으로 전달되는 것이다. 그렇기 때문에 자바스크립트에서 `this` 는 함수가 호출된 상황에 따라 그 모습을 달리한다.
+
 - `this` 는 현재 실행 문맥을 뜻한다.
 
   - 함수를 호출할 때 함수가 어떻게 호출되었는지에 따라 `this`에 바인딩할 객체가 동적으로 결정
@@ -87,7 +89,140 @@ var instance = new foo();
 > 2. 메소드 호출에서 this는 **obj**
 > 3. 생성자 함수 호출에서 this는  **instance**
 
-- 자바스크립트는 this를 명시적으로 바인딩할 수 있는 apply, call, bind 메소드를 제공한다.
+
+
+##### 1.함수를 호출할 때
+
+ 특정 객체의 메서드가 아니라 함수를 호출하면, 해당 함수 내부 코드에서 사용된 `this`는 전역객체에 바인됭 된다. `A.B` 일 때 `A` 가 전역 객체가 되므로 `B` 함수 내부에서의 `this` 는 당연히 전역 객체에 바인딩 되는 것이다.
+
+```javascript
+var value = 100;
+var myObj = {
+    value : 1,
+    func1 : function(){
+        console.log(`func1's this.value: ${this.value}`);
+    	var func2 = function() {
+            console.log(`func2's this.value : ${this.value}`)
+        };
+        func2();
+    }
+};
+
+myobj.func1();
+// 출력 : func1's this.value : 1
+// 출력 : func2's this.value : 100
+```
+
+
+
+
+
+##### 2. 메서드를 호출할 때
+
+ 객체의 프로퍼티가 함수일 경우 메서드라고 부른다. `this` 는 함수를 실행할 때 함수를 소유하고 있는 객체(메서드를 포함하고 있는 인스턴스)를 참조한다. 즉, 해당 메서드를 호출한 객체로 바인딩된다. `A.B` 일 때 `B` 함수 내부에서의 `this`는 `A`를 가리키는 것이다.
+
+```javascript
+var myObject = {
+    name : "foo",
+    sayName : function(){
+        console.log(this);
+    }
+};
+myObject.sayName();
+// 출력 : Object {name : "foo", sayName : sayName()}
+```
+
+
+
+##### 3. 생성자 함수를 호출할 때
+
+ 그냥 함수를 호출하는 것이 아니라 `new` 키워드를 통해 생성자 함수를 호출할 때는 `this`가 다르게 바인딩 된다. `new` 키워드를 통해서 호출된 함수 내부에서의 `this` 는 객체 자신이 된다. 생성자 함수를 호출할 때의 `this` 바인딩은 함수가 동장하는 방식을 통해 이해할 수 있다.
+
+ `new` 연산자를 통해 함수를 생성자로 호출하게 되면, 일단 빈 객체가 생성되고 `this`가 바인딩 된다. 이 객체는 함수를 통해 생성된 객체이며, 자신의 부모인 프로토타입 객체와 연결되어 있다. 그리고 `return` 문이 명시되어 있지 않은 경우에는 `this`로 바인딩된 새로 생성된 객체가 리턴된다.
+
+```javascript
+var Person = function(name) {
+    console.log(this);
+    this.name = name;
+};
+
+var foo = new Person("foo"); // Person
+console.log(foo.name) // foo
+```
+
+
+
+##### 4. apply, call, bind를 통한 호출
+
+ 위의 1, 2, 3 방법에 의존하지 않고 `this`를 자바스크립트 코드로 주입 또는 설정할 수 있는 방법이다. 1번째 방법을 통해 세 메서드의 차이점을 파악해보자.
+
+- `bind` 메서드 사용
+
+```javascript
+var value = 100;
+var myObj = {
+    value : 1,
+    func1 : function(){
+        console.log(`func1's this.value: ${this.value}`);
+    	var func2 = function(val1, val2) {
+            console.log(`func2's this.value : ${this.value} and ${val1} and ${val2}`)
+        }.bind(this, `param1`, `param2`);
+        func2();
+    }
+};
+
+myobj.func1();
+// 출력 : func1's this.value : 1
+// 출력 : func2's this.value : 1 and param1 and param2
+```
+
+
+
+- `call` 메서드 사용
+
+```javascript
+var value = 100;
+var myObj = {
+    value : 1,
+    func1 : function(){
+        console.log(`func1's this.value: ${this.value}`);
+    	var func2 = function(val1, val2) {
+            console.log(`func2's this.value : ${this.value} and ${val1} and ${val2}`)
+        };
+        func2.call(this, `param1`, `param2`);
+    }
+};
+
+myobj.func1();
+// 출력 : func1's this.value : 1
+// 출력 : func2's this.value : 1 and param1 and param2
+```
+
+
+
+- `apply` 메서드 사용
+
+```javascript
+var value = 100;
+var myObj = {
+    value : 1,
+    func1 : function(){
+        console.log(`func1's this.value: ${this.value}`);
+    	var func2 = function(val1, val2) {
+            console.log(`func2's this.value : ${this.value} and ${val1} and ${val2}`)
+        };
+        func2.apply(this, [`param1`, `param2`]);
+    }
+};
+
+myobj.func1();
+// 출력 : func1's this.value : 1
+// 출력 : func2's this.value : 1 and param1 and param2
+```
+
+- `bind` vs `apply` , `call` : 우선 `bind` 는 함수를 선언할 때, `this` 와 파라미터를 지정해줄 수 있으며, `call` 과 `apply` 는 함수를 호출할 때, `this`와 파라미터를 지정해준다.
+
+- `apply` vs `bind`, `call` : `apply` 메서드는 첫번째 인자로 `this` 를 넘겨주고 두번째 인자로 넘겨줘야 하는 파라미터를 배열 형태로 전달한다. `bind` 메서드와 `call` 메서드는 각각의 파라미터를 하나씩 넘겨주는 형태다.
 
 
 
