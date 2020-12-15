@@ -181,3 +181,6 @@ getData().then(function(data) {
   >
   > `then()` 에서오류가 나는 경우 제대로 오류를 잡아내지 못하기 때문.
 
+
+
+[참고하면 좋을 사이트](https://programmingsummaries.tistory.com/325)
