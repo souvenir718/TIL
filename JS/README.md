@@ -23,3 +23,5 @@
 9. [Hoisting 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Hositing.md)
 
 10. [Closure 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Closure.md)
+
+11. [Spread, Rest Parameter 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Spread%2C%20Rest%20parameter.md)
