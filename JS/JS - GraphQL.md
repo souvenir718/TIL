@@ -57,8 +57,90 @@ SELECT plot_id, specieds_id, weight, ROUND(weight / 1000.0, 2) FROM surveys;
 
 ### GraphQL의 구조
 
+##### 쿼리 / 뮤테이션 (query / mutation)
+
+ 쿼리와 뮤테이션 그리고 응답 내용의 구조는 상당히 직관적이다. 요청하는 쿼리문의 구조와 응답 내용의 구조는 거의 일치한다.
+
+#####     GraphQL 쿼리문(좌측)과 응답 데이터 형식(우측)
+
+![](https://tech.kakao.com/files/graphql-example.png)
 
 
 
+ gql에서는 굳이 쿼리와 뮤테이션을 나누는데 내부적으로 들어가면 사실상 이 둘은 별 차이가 없다. 쿼리는 데이터를 읽는데(R) 사용하고, 뮤테이션은 데이터를 변조(CUD)하는데  사용한다는 개념적인 규약을 정해놓은 것이다.
+
+
+
+```javascript
+{
+    human(id: "1000") {
+        name
+        height
+    }
+}
+
+query HeroNameAndFriends($episode: Episode) {
+    hero(episode: $episode) {
+        name
+        friends {
+            name
+        }
+    }
+}
+```
+
+ 주로 정보를 불러올 때 id값이나, 다른 **인자** 값을 가지고 데이터를 불러온다. gql에는 쿼리에 **변수**라는 개념이 있다. gql을 구현한 클라이언트에서는 이 변수에 프로그래밍으로 값을 할당 할 수 있는 함수 인터페이스가 존재한다. react apollo client의 경우에는 variables라는 파라미터에 원하는 값을 넣어주면 된다.
+
+
+
+```javascript
+query getStudentInformation($studentId: ID) {
+    personalInfo(studentId: $studentId) {
+        name
+        address1
+        address2
+        major
+    }
+    classInfo(year: 2018, studentId: $studentId) {
+        classCode
+        className
+        teacher {
+            name
+            major
+        }
+        classRoom {
+            id
+            maintainer {
+                name
+            }
+        }
+    }
+    SATInfo(schoolCode: 0412, studentId: $studentId) {
+        totalScore
+        dueDate
+    }
+}
+```
+
+ **오퍼레이션** 네임 쿼리는 매우 편리하다. 비유하자면 쿼리용 함수다. 데이터베이서에서의 프로시져 개념과 유사하다고 생각하면 된다. 이 개념으로 REST API를 호출할 때와 다르게 한번의 인터넷 네트워크 왕복으로 원하는 데이터를 가져올 수 있다.  REST API에서는 프론트앤드 프로그래머는 백앤드 프로그래머가 작성하여 전달하는 API의 request / response의 형식에 의존하게 되지만 gql을 사용한 방식에서는 이러한 의존도가 많이 사라진다. 다만 데이터 스키마에 대한 협업 의존성은 존재한다.
+
+
+
+### 스키마 / 타입 ( schema / type )
+
+ ##### 오브젝트 타입과 필드
+
+```javascript
+type Character {
+    name: String!
+    appearsIn: [Episode!]!
+}
+```
+
+- 오브젝트 타입 : Character
+- 필드 : name, appearsIn
+- 스칼라 타입 : String, ID, Int 등
+- 느낌표 : 필수 값을 의미
+- 대괄호 : 배열을 의미
 
 [출처](https://tech.kakao.com/2019/08/01/graphql-basic/)
