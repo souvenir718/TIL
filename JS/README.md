@@ -25,3 +25,9 @@
 10. [Closure 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Closure.md)
 
 11. [Spread, Rest Parameter 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Spread%2C%20Rest%20parameter.md)
+
+12. [Iteration and for-of statement.md](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Iteration%20and%20for-of%20statement.md)
+
+13. [구조분해](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20%EA%B5%AC%EC%A1%B0%EB%B6%84%ED%95%B4.md)
+
+14. [Class](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Class.md)
