@@ -16,7 +16,7 @@
 
   쿠버네티스는 복잡하고 다양한 작업을 하지만 자세히 들여다보면 **current state - 현재 상태**를 모니터링하면서 관리자가 설정한 **원하는 상태**를 유지하려고 내부적으로 여러 작업을 하는 로직을 가지고 있다.
 
-  이러한 개념 때문에 관리자가 서버를 배포할 때 직접적인 동작을 명령하지 않고 상태를 선언하는 방식을 사용한다. 예를 들어 "nginx 컨테이너를 실행해줘. 그리고 80 포트로 오픈해줘."는 현재 상태를 원하는 상태로 바꾸기 위한 **명령 ( imperative )**이고 "80 포트를 오픈한 nginx 컨테이너 1개를 유지해줘"는 원하는 상태를 **선언 ( declarative )**한 것이다.
+  이러한 개념 때문에 관리자가 서버를 배포할 때 직접적인 동작을 명령하지 않고 상태를 선언하는 방식을 사용한다. 예를 들어 "nginx 컨테이너를 실행해줘. 그리고 80 포트로 오픈해줘."는 현재 상태를 원하는 상태로 바꾸기 위한 **명령( imperative )** 이고 "80 포트를 오픈한 nginx 컨테이너 1개를 유지해줘"는 원하는 상태를 **선언 ( declarative )** 한 것이다.
 
 ```bash
 docker run # 명령
@@ -33,6 +33,13 @@ kubectl create # 상태 생성
 
   쿠버네티스는 상태를 관리하기 위한 대상을 오브젝트로 정의한다.
 
+> 쿠버네티스의 YAML 파일은 일반적으로  apiVersion, kind, metadata, spec 네가지 항목으로 구성된다
+>
+> - apiVersion : YAML 파일에서 정의한 오브젝트의 API 버전을 나타냅니다. 오브젝트의 종류 및 개발 성숙도에 따라  apiVersion의 설정값이 달라질 수 있다
+> - kind : 리소스의 종류를 나타낸다. 
+> - metadata : 라벨, 주석, 이름 등과 같은 리소스의 부가 정보들을 입력한다. 
+> - spec : 리소스를 생성하기 위한 자세한 정보를 입력합니다. 
+
 
 
 #### 1. Pod
@@ -43,11 +50,54 @@ kubectl create # 상태 생성
 
 
 
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+	name: my-nginx-pod
+spec:
+	containers:
+	- name: my-nginx-container
+	  image: nginx:latest
+	  ports:
+	  	- containerPort: 80
+	  	  protocol: TCP
+```
+
+
+
+
+
 #### 2. ReplicaSet
 
 <img src="https://subicura.com/assets/article_images/2019-05-19-kubernetes-basic-1/replicaset.png" style="zoom:50%;" />
 
   **Pod**를 여러 개(한 개 이상) 복제하여 관리하는 오브젝트다. **Pod**를 생성하고 개수를 유지하려면 반드시 **ReplicaSet**을 사용해야 한다. **ReplicaSet**은 복제할 개수, 개수를 체크할 라벨 선택자, 생성할 **Pod**의 설정값(템플릿) 등을 가지고 있다. 직접적으로 **ReplicaSet**을 사용하기보다는 **Deployment** 등 다른 오브젝트에 의해서 사용되는 경우가 많다
+
+
+
+```yaml
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+	name: replicaset-nginx
+spec:
+	replicas: 3
+	selector:
+		matchLabels:
+			app: my-nginx-pods-label
+	template:
+		metadata:
+			name: my-nginx-pod
+			labels:
+				app: my-nginx-pods-label
+		spec:
+			containers:
+				- name: nginx
+				  image: nginx:latest
+				  ports:
+				  	- containerPort: 80
+```
 
 
 
@@ -111,7 +161,7 @@ spec:
 
 ### 쿠버네티스 배포방식
 
-  쿠버네티스는 애플리케이션을 배포하기 위해 **원하는 상태(desired state )**를 다양한 오브젝트에 라벨을 붙여 정의(yaml)하고 API 서버에 전달하는 방식을 사용한다.
+  쿠버네티스는 애플리케이션을 배포하기 위해 **원하는 상태(desired state )** 를 다양한 오브젝트에 라벨을 붙여 정의(yaml)하고 API 서버에 전달하는 방식을 사용한다.
 
    "컨테이너를 2개 배포하고 80 포트로 오픈해줘"
 
@@ -163,7 +213,7 @@ spec:
 
   클러스터의 모든 설정, 상태 데이터는 여기 저장되고 나머지 모듈은 **stateless**하게 동작하기 때문에 **etcd**만 잘 백업해두면 언제든지 클러스터를 복구할 수 있다. **etcd**는 오직 **API 서버**와 통신하고 다른 모듈은 **API 서버**를 거쳐 **etcd** 데이터에 접근한다.
 
-> RAFT 알고리즘 : 뗏목처럼 운용중인 여러 서버들 중 일부에 장애가 발생하더라도 제 기능을 유지하도록 하는 **합의 알고리즘 (합의 프로토콜)**이다. Raft와 같은 합의 알고리즘이 적용된 시스템은 특정 서버에 장애가 발생하더라도 전체 서비스를 중단하지 않고 서버를 복구할 수 있다.
+> RAFT 알고리즘 : 뗏목처럼 운용중인 여러 서버들 중 일부에 장애가 발생하더라도 제 기능을 유지하도록 하는 **합의 알고리즘 (합의 프로토콜)** 이다. Raft와 같은 합의 알고리즘이 적용된 시스템은 특정 서버에 장애가 발생하더라도 전체 서비스를 중단하지 않고 서버를 복구할 수 있다.
 
 
 
@@ -205,7 +255,7 @@ spec:
 
 
 
-###### 2. 프록시 [kube-proxy](https://github.com/souvenir718/TIL/blob/master/Cloud/Cloud%20-%20kube-proxy.md)
+###### 2. 프록시 [kube-proxy](https://github.com/souvenir718/Cloud-Study/blob/master/Cloud%20-%20kube-proxy.md)
 
   **Pod**로 연결되는 네트워크를 관리한다. TCP, UDP, SCTP 스트림을 포워딩하고 여러 개의 Pod를 라운드로빈 형태로 묶어 서비스를 제공할 수 있다. 초기에는 kube-proxy 자체가 프록시 서버로 동작하면서 실제 요청을 프록시 서버가 받고 각 Pod에 전달해 주었는데 시간이 지나면서 **iptables**를 설정하는 방식으로 변경되었다. iptables에 등록된 규칙이 많아지면서 느려지는 문제 때문에 최근 **IPVS**를 지원하기 시작했다.
 
@@ -260,3 +310,52 @@ spec:
 - Kubelet은 자신의 Node에 할당되었지만 아직 생성되지 않은 Pod가 있는지 체크한다.
 - 생성되지 않은 Pod가 있으면 명세를 보고 Pod를 생성한다.
 - Pod의 상태를 주기적으로 API Server에 전달한다.
+
+
+
+
+
+## 인그레스(Ingress)
+
+  서비스 오브젝트가 외부 요청을 받아들이기 위한 것이었다면 **인그레스**는 외부 요청을 어떻게 처리할 것인지 네트워크 7계층 레벨에서 정의하는 쿠버네티스 오브젝트다. 외부 요청에 대한 처리 규칙을 쿠버네티스 자체의 기능으로 편리하게 관리할 수 있다는 것이 **인그레스**의 핵심이다.
+
+  예를 들면, 디플로이먼트가 3개 생성돼 있을 때, 서비스마다 세부적인 설정, 보안 연결 등을 일일이 설정해 주지 않고 인그레스에 설정하여 요청은 인그레스에서 정의한 규칙에 따라 처리된 뒤 적절한 디플로이먼트의 포드로 전달된다.
+
+<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlnXym%2FbtqBj6rZveA%2FUKNt7GykAnGuC5YQsC0jTK%2Fimg.png" style="zoom:67%;" />
+
+
+
+
+
+###  인그레스 오브젝트가 담당할 수있는 기본적인 기능
+
+- 외부 요청의 라우팅 : /apple, /apple/red 등과 같이 특정 경로로 들어온 요청을 어떠한 서비스로 전달할지 정의하는 라우팅 규칙을 설정할 수 있다
+- 가상 호스트 기반의 요청 처리 : 같은 IP에 대해 다른 도메인 이름으로 요청이 도착했을 때, 어떻게 처리할 것인지 정의할 수 있다
+- SSL / TLS 보안 연결 처리 : 여러 개의 서비스로 요청을 라우팅할 때, 보안 연결을 위한 인증서를 쉽게 적용할 수 있다.
+
+
+
+> 인그레스는 외부로부터 들어오는 요청에 대한 로드밸런싱, TLS/SSL 인증서 처리, 도메인 기반 가상 호스팅 제공, 특정 HTTP 경로의 라우팅 등의 규칙들을 **정의** 해 둔 자원이며, 이런 규칙들을 실제로 동작해주는건 **인그레스 컨트롤러** 다. 즉, 실제로 외부 요청을 받아들이는 것은 인그레스 컨트롤러 서버이며, 이 서버가 인그레스 규칙을 로드해 사용한다. 대표적으로는 **Nginx 웹 서버 인그레스 컨트롤러** 가 있다.
+
+
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+	name: minimal-ingress
+	annotations:
+		nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+	rules:
+	- http:
+		paths:
+		- path: /testpath
+		  pathType: Prefix
+		  backend:
+		  	service:
+		  		name: test
+		  		port:
+		  			number: 80
+```
+
