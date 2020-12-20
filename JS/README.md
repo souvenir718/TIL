@@ -31,3 +31,9 @@
 13. [구조분해](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20%EA%B5%AC%EC%A1%B0%EB%B6%84%ED%95%B4.md)
 
 14. [Class](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Class.md)
+
+15. [Symbol](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Symbol.md)
+
+16. [Template literal](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Template%20literal.md)
+
+17. [Array API](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Array%20API.md)
