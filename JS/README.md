@@ -37,3 +37,9 @@
 16. [Template literal](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Template%20literal.md)
 
 17. [Array API](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Array%20API.md)
+
+18. [Babel](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Babel.md)
+
+19. [URL & URI](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20URL%20%26%20URI.md)
+
+20. [브라우저 동작방법](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EB%8F%99%EC%9E%91%20%EB%B0%A9%EB%B2%95.md)
