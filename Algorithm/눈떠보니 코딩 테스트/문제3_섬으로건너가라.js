@@ -86,51 +86,5 @@ const timeToShip = (waitPeople) => {
 
     return `${20+ year}년 ${month}월 ${date}일 ${hour}시 ${minute}분`
 }
-
-const start = () => {
-    let yearDate = 0; //일년 일 수
-    let month = 0; // 걸린 월 수
-    console.log("총 걸린 일 : ", waitingPeople / 1200);
-    
-    for(let i=1; i<11; i++){
-        yearDate += 2**i;
-    }
-    
-    let remainDate = (waitingPeople/1200)%yearDate;// 나머지 일 수
-    console.log("일년 : ", yearDate);
-    console.log("걸린 연도 : ", (waitingPeople/1200)/yearDate);
-    console.log("계산 전 걸린 연도를 뺀 나머지 일수 : ", remainDate);
-    
-    for(i=10; i>0; i++){
-        month++;
-        if((waitingPeople/1200)%yearDate < 2**i)
-        break;
-        
-        remainDate = remainDate - 2**i;
-    }
-    
-    console.log("계산 후 걸린 연도를 뺀 나머지 일수 : ", remainDate);
-    console.log("걸린 월수", month);
-    console.log("시간 : ", (waitingPeople%1200)/100 + 9);
-
-    let startPeople = [25, 40, 55, 70, 85, 100];
-    let calculate = 0;
-
-    for (let key in startPeople) {
-        if (startPeople[key] > (waitingPeople%1200)%100) {
-            calculate = key*10;
-            break;
-        }
-    }
-
-    console.log("최종계산된 분 : ", calculate);
-
-    let date = new Date();
-
-    if(calculate + date.getMinutes() > 60){
-        calculate = calculate + date.getMinutes - 60
-    }
-};
-
 // 프로그램 동작
 console.log(timeToShip(waitingPeople));
