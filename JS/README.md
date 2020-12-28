@@ -4,10 +4,6 @@
 
 ## 목차
 
-
-
-### :star: ​ES5 :star:
-
 1. [Event Loop 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Event%20Loop.md)
 2. [async, await 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20async%EC%99%80%20await.md)
 3. [console 객체 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20console%20%EA%B0%9D%EC%B2%B4.md)
