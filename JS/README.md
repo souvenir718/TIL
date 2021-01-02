@@ -18,18 +18,25 @@
 
 7. [Closure 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Closure.md)
 
-8. [Array API](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Array%20API.md)
+8. [Closure (JS Flow ) 정리](https://github.com/souvenir718/TIL/blob/master/JS/JS%20Closure(JS%20Flow).md)
 
-9. [URL & URI](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20URL%20%26%20URI.md)
+9. [Array API](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Array%20API.md)
 
-10. [브라우저 동작방법](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EB%8F%99%EC%9E%91%20%EB%B0%A9%EB%B2%95.md)
+10. [URL & URI](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20URL%20%26%20URI.md)
 
-11. [아스키코드 변환하기](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0%20(%20charCodeAt%20%20fromCharCode%20).md)
+12. [브라우저 동작방법](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%20%EB%8F%99%EC%9E%91%20%EB%B0%A9%EB%B2%95.md)
 
-12. [문자열을 수로 바꾸는 함수](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20parseFloat()%2C%20parseInt()%20%20%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%84%20%EC%88%98%EB%A1%9C%20%EB%B0%94%EA%BE%B8%EB%8A%94%20%ED%95%A8%EC%88%98.md)
+12. [아스키코드 변환하기](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20%EC%95%84%EC%8A%A4%ED%82%A4%EC%BD%94%EB%93%9C%20%EB%B3%80%ED%99%98%ED%95%98%EA%B8%B0%20(%20charCodeAt%20%20fromCharCode%20).md)
 
-13. [실행 콘텍스트](https://github.com/souvenir718/TIL/commit/050d6bb6a39ffd3fecb666065f47a45a999f908f)
+13. [문자열을 수로 바꾸는 함수](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20parseFloat()%2C%20parseInt()%20%20%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%84%20%EC%88%98%EB%A1%9C%20%EB%B0%94%EA%BE%B8%EB%8A%94%20%ED%95%A8%EC%88%98.md)
 
+14. [실행 콘텍스트 ( JS Flow )](https://github.com/souvenir718/TIL/commit/050d6bb6a39ffd3fecb666065f47a45a999f908f)
+
+15. [this ( JS Flow )](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20this%20(%20JS%20Flow%20).md)
+
+16. [Prototype ( JS Flow )](https://github.com/souvenir718/TIL/blob/master/JS/JS%20Prototype%20(%20JS%20Flow%20).md)
+
+17. [Class ( JS Flow )](https://github.com/souvenir718/TIL/blob/master/JS/JS%20-%20Class%20(%20JS%20Flow%20).md)
 
 
 ### :star2: ES6 :star2:
