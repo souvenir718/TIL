@@ -117,3 +117,9 @@ console.log(arr.toString()); // [1, 2, 3]
 
 console.log(arr.__proto__toString.call(arr)); // [1, 2, 3]
 ```
+
+
+
+---
+
+출처 : [JS - Flow](https://www.inflearn.com/course/%ED%95%B5%EC%8B%AC%EA%B0%9C%EB%85%90-javascript-flow/dashboard)
