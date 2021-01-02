@@ -22,7 +22,7 @@ var outer = function () {
 outer();
 ```
 
-![](C:\Users\김수빈\AppData\Roaming\Typora\typora-user-images\image-20201230204834389.png) 
+![](../Images/Closure_1.png) 
 
 
 
@@ -41,7 +41,7 @@ console.log(outer2()); // 출력 : 2
 console.log(outer2()); // 출력 : 3
 ```
 
-![](C:\Users\김수빈\AppData\Roaming\Typora\typora-user-images\image-20201230205457866.png) 
+![](../Images/Closure_2.png) 
 
 > a가 사라지지 않는다.
 
