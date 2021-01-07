@@ -25,4 +25,4 @@
 ### [이력서](https://github.com/souvenir718/TIL/blob/master/%EA%B9%80%EC%88%98%EB%B9%88.pdf)
 
 
-### :star2 [오늘의 할 일](https://github.com/souvenir718/TIL/blob/master/%EC%98%A4%EB%8A%98%20%ED%95%A0%EC%9D%BC.md)
+### :star2: [오늘의 할 일](https://github.com/souvenir718/TIL/blob/master/%EC%98%A4%EB%8A%98%20%ED%95%A0%EC%9D%BC.md)
