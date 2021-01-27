@@ -147,4 +147,4 @@ query{
 
 #### 그림으로 표현하면 아래와 같다.
 
-![](../images/graphql&restapi.png) 
+![](../Images/graphql&restapi.png) 
