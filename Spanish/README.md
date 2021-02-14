@@ -31,7 +31,7 @@
 
 
 
-## 🎨 [모르는 단어 정리하기]()
+## 🎨 [모르는 단어 정리하기](https://github.com/souvenir718/TIL/blob/master/Spanish/%EB%AA%A8%EB%A5%B4%EB%8A%94%20%EB%8B%A8%EC%96%B4.md)
 
 
 
