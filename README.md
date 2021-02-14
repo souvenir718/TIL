@@ -16,6 +16,8 @@
 
 🧱 [Sing](https://github.com/souvenir718/TIL/tree/master/Sing)
 
+🧱 [Spanish](https://github.com/souvenir718/TIL/tree/master/Spanish)
+
 🧱 [lecture](https://github.com/souvenir718/TIL/tree/master/lecture)
 
 🧱 [Certificate](https://github.com/souvenir718/TIL/tree/master/Certificate)
