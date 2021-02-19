@@ -86,3 +86,26 @@ transition-timing-function : cubic-bezier(0.25, 0.5, 0.25, 0.5);
 transitoin : background-color 2s ease-in-out 3s;`
 ```
 
+
+
+### 샘플 코드
+
+```css
+div {
+    width : 300px;
+    height: 300px;
+    background-color: black;
+    transition-property: width, height, background-color;
+    transition-duration: 3s;
+    transition-timing-function: ease-in;
+    transition-delay: 3s;
+}
+div:hover{
+    width: 900px;
+    height: 900px;
+    background-color: white
+}
+```
+
+
+
