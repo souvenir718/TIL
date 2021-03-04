@@ -25,12 +25,19 @@
 🧱 [모르는 용어 정리](https://github.com/souvenir718/TIL/blob/master/%EC%9A%A9%EC%96%B4%20%EC%A0%95%EB%A6%AC%EB%85%B8%ED%8A%B8.md)
 
 <br/>
+
 ### 🧾 [이력서](https://github.com/souvenir718/TIL/blob/master/%EA%B9%80%EC%88%98%EB%B9%88.pdf)
+
 <br/>
+
 ### 👉 [포트폴리오](https://souvenir718.github.io/)
+
 <br/>
+
 ### 😎 `npx souvenir718`
+
 <br/>
+
 ### :star2: [오늘의 할 일](https://github.com/souvenir718/TIL/blob/master/%EC%98%A4%EB%8A%98%20%ED%95%A0%EC%9D%BC.md)
 
 
