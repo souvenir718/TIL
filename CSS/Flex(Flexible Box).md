@@ -120,3 +120,48 @@
     - `baseline` : `Items` 를 문자 기준선에 정렬
 
     ![](https://heropy.blog/images/screenshot/css-flexible-box/flex-align-self.jpg)
+
+### 3. flex-shrink, flex-grow(child)
+
+```css
+.father {
+	display: flex;
+    flex-direction: row; // default
+}
+.child {
+    width: 100px;
+    height: 100px;
+    background: red;
+}
+.child:nth-child(2){
+    flex-shrink: 2; // defulat: 1
+    // 2배로 flexbox의 넓이가 줄어든다.
+}
+.child:nth-child(3){
+    flex-gorw: 1; // default:0
+    //공간을 차지할수있는만큼 늘어난다.
+}
+```
+
+```html
+<div class="father">
+    <div class="child">1</div>
+    <div class="child">2</div>
+    <div class="child">3</div>
+</div>
+```
+
+
+
+### 4. flex-basis(child)
+
+```css
+.child {
+    flex-basis: 300px;
+}
+```
+
+: element에게 **처음 크기**를 지정한다.
+
+- `flex-direction`이 row일때는  `width`
+- `flex-direction`이 column일때는 `height`
