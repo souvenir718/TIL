@@ -73,3 +73,42 @@ console.log(str.endsWith('to be', 19)); // true
 
 
 
+### includes()
+
+`includes()` 메서드는 하나의 문자열이 다른 문자열에 포함되어 있는지를 판별하고, 결과를 `true` 또는 `false`로 반환한다.
+
+> str.includes(searchString[, position]);
+>
+> 파라미터
+>
+> 1. `searchString`: 찾고자 하는 문자열
+> 2. `position`: 기본값은 0이며, 찾기 시작할 위치를 입력한다.
+
+```javascript
+const sentence = 'The quick brown fox';
+
+const word = 'fox';
+console.log(sentence.includes(word)); // true
+```
+
+
+
+### indexOf()
+
+`indexOf()` 메서드는 호출한 String 객체에서 주어진 값과 일치하는 첫번째 인덱스를 반환한다. 일치하는 값이 없으면 `-1`을 반환한다.ㅏ
+
+> str.indexOf(searchValue[, fromIndex]);
+>
+> 파라미터
+>
+> 1. `searchValue`: 찾으려는 문자열, 아무것도 입력하지 않으면 `undefined`를 찾으려는 문자열로 사용
+> 2. `fromIndex`: 문자열에서 찾기 시작하는 위치를 나타내는 인덱스 값, 음의 정수이면 전체 문자열을 찾고 기본값은 0이다.
+
+```javascript
+'Blue Whale'.indexOf('Blue');     // returns  0
+'Blue Whale'.indexOf('Blute');    // returns -1
+'Blue Whale'.indexOf('Whale', 0); // returns  5
+'Blue Whale'.indexOf('Whale', 5); // returns  5
+'Blue Whale'.indexOf('Whale', 7); // returns -1
+```
+
