@@ -112,3 +112,49 @@ console.log(sentence.includes(word)); // true
 'Blue Whale'.indexOf('Whale', 7); // returns -1
 ```
 
+
+
+### padEnd(), padStart()
+
+`padEnd()` 메서드는 현재 문자열에 다른 문자열을 **우측부터** 채워, 주어진 길이를 만족하는 새로운 문자열을 반환한다. 
+
+`padStart()` 메서드는 현재 문자열에 다른 문자열을 **좌측부터** 채워, 주어진 길이를 만족하는 새로운 문자열을 반환한다. 
+
+> str.padEnd(targetLength, [, padString])
+>
+> 파라미터
+>
+> 1. `targetLength`: 목표 문자열 길이
+> 2. `padString`: 현재 문자열에 채워넣을 다른 문자열
+
+```javascript
+const str = 'Hello';
+
+console.log(str.padEnd(10, '!'))// Hello!!!!!
+console.log(str.padStart(10, '!'))// !!!!!Hello
+```
+
+
+
+### search()
+
+`search()` 메서드는 정규 표현식과 이 `String` 객체 간에 같은 것을 찾기 위한 검색을 실행한다.
+
+> str.search(regexp)
+>
+> 파라미터
+>
+> 1. `regexp`: 정규표현식 객체
+>
+> 정규표현식과 첫번째로 매치되는 것의 인덱스를 반환한다. 찾지 못하면 `-1`을 반환한다.
+
+```javascript
+var str = 'hey JudE';
+var re = /[A-Z]/g;
+var re2 = /[.]/g;
+console.log(str.search(re)); // return 4
+console.log(str.search(re2)); // return -1
+```
+
+
+
