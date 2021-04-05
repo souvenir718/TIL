@@ -158,3 +158,42 @@ console.log(str.search(re2)); // return -1
 
 
 
+### slice()
+
+`slice()` 메소드는 문자열의 일부를 추출하면서 새로운 문자열을 반환한다.
+
+> str.slice(beginIndex[, endIndex])
+>
+> 파라미터
+>
+> 1. `beginIndex`: 추출 시작점인 0부터 시작하는 인덱스다.
+> 2. `endIndex`: 종료점 인덱스 직전까지 추출된다. 생략된다면 마지막까지 추출한다.
+
+```javascript
+var str = 'The morning is upon us.'
+
+console.log(str.slice(1, 8)); // he morn
+```
+
+
+
+### split()
+
+`split()` 메서드는 String 객체를 지정한 구분자를 이용하여 여러개의 문자열로 나눈다.
+
+> str.split([seperator[, limit]])
+>
+> 파라미터
+>
+> 1. `seperator`: 원본 문자열을 끊어야 할 부분을 나타내는 문자열. 문자열이나 정규표현식을 받을 수 있다.
+> 2. `limit`: 끊어진 문자열의 최대 개수를 나타낸다.
+>
+> 반환값은 문자열을 담은 `Array`
+
+```javascript
+var myString = 'Hello World. How';
+var splits = myString.split(' ');
+
+console.log(splits);// ["Hello", "World.", "How"]
+```
+
