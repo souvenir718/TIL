@@ -197,3 +197,37 @@ var splits = myString.split(' ');
 console.log(splits);// ["Hello", "World.", "How"]
 ```
 
+
+
+### substring()
+
+`substring()` 메서드는 string 객체의 시작 인덱스로부터 종료 인덱스 전까지 문자열의 부분 문자열을 반환한다.
+
+> str.substring(indexStart[, indexEnd])
+>
+> 파라미터
+>
+> 1. `indexStart` : 반환문자열의 시작 인덱스
+> 2. `indexEnd` : 반환문자열의 마지막 인덱스(포함하지는 않는다.)
+
+```javascript
+var anyString 'Mozilla';
+
+console.log(anyString.substring(0,1)); // M
+console.log(anyStrnig.substring(4)); // Mozill
+```
+
+
+
+### toLowerCase()
+
+`toLowerCase()` 메서드는 문자열을 소문자로 변환해 반환한다.
+
+> str.toLowerCase()
+>
+> `toLowerCase()`는 원래 `str`에 영향을 주지 않는다.
+
+```javascript
+console.log('ALPHABET'.toLowerCase()); // alphabet
+```
+
