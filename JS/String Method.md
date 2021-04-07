@@ -231,3 +231,32 @@ console.log(anyStrnig.substring(4)); // Mozill
 console.log('ALPHABET'.toLowerCase()); // alphabet
 ```
 
+
+
+### toUpperCase()
+
+`toUpperCase()` 메서드는 문자열을 대문자로 변환해 반환한다.
+
+> str.toUpperCase()
+>
+> `toUpperCase()`는 원래 `str`에 영향을 주지 않는다.
+
+```javascript
+console.log('alphabet'.toUpperCase()); // ALPHABET
+```
+
+
+
+### trim()
+
+`trim()` 메서드는 문자열 양 끝의 공백을 제거한다. 공백이란 모든 공백문자(space, tab, NBSP 등)와 모든 개행문자를 의미한다.
+
+> stri.trim()
+>
+> 양 끝에서 공백을 제거한 새로운 문자열을 반환한다. 
+
+```javascript
+var orig = '	foo		';
+console.log(orig.trim()); // foo
+```
+
