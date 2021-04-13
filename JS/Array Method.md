@@ -18,3 +18,32 @@ console.log(arr3);
 
 
 
+### entries()
+
+`entries()` 메서드는 배열의 각 인덱스에 대한 키/값 쌍을 가지는 새로운 **Array Iterator** 객체를 반환한다.
+
+```javascript
+const a = ['a', 'b', 'c'];
+const iterator = a.entries();
+
+for(let e of iterator){
+    console.log(e);
+}
+// [0, 'a']
+// [1, 'b']
+// [2, 'c']
+```
+
+
+
+### every()
+
+`every()` 메서드는 배열 안의 모든 요소가 주어진 판별 함수를 통과하는지 테스트한다.
+
+> 빈 배열에서 호출하면 무조건 **true**를 반환한다.
+
+```javascript
+[12, 5, 8, 130, 44].every(elem => elem >= 10); // false
+[12, 54, 18, 130, 44].every(elem => elem >= 10); // true
+```
+
