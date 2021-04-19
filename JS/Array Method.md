@@ -222,3 +222,81 @@ a.flatMap( (n) =>
 // expected output: [4, 1, 4, 20, 16, 1, 18]
 ```
 
+
+
+### forEach()
+
+`forEach()` 메서드는 주어진 함수를 배열 요소 각각에 대해 실행한다. `forEach()`는 `callback`을 배열에 있는 각 요소에 대해 오름차순으로 한번씩 실행한다.
+
+```javascript
+const arr1 = ['a', 'b', 'c'];
+
+arr1.forEach(ele => console.log(ele));
+// a
+// b
+// c
+```
+
+
+
+### from()
+
+`Array.from()` 메서드는 유사 배열 객체나 반복 가능한 객체를 얕게 복사해 새로운  `Array` 객체를 만든다.
+
+> Array.from(arrayLike[, mapFn[, thisArg]])
+>
+> **매개변수**
+>
+> - `arrayLike` : 배열로 변환하고자 하는 유사 배열 객체나 반복 가능한 객체
+> - `mapFn`(opt) : 배열의 모든 요소에 대해 호출할 맵핑 함수
+> - `thisArg`(opt) : mapFn 실행시에 this로 사용할 값
+
+```javascript
+console.log(Array.from('foo')); // Array['f', 'o', 'o']
+console.log(Array.from([1,2,3], x => x + x));
+// Array [2, 4, 6]
+```
+
+
+
+### includes()
+
+`includes()` 메서드는 배열이 특정 요소를 포함하고 있는지 판별한다.
+
+> arr.includes(searchElement [, fromIndex])
+>
+> **매개변수**
+>
+> - `searchElement`: 탐색할 요소(대소문자를 구분한다.)
+> - `fromIndex` : 이 배열에서 searchElement 검색을 시작할 위치다. default는 0.
+
+```javascript
+const arr1 = [1, 2, 3];
+console.log(arr1.includes(2)); // true
+
+const pets = ['cat', 'dog', 'bat'];
+console.log(pets.includes('cat')); // true
+
+```
+
+
+
+### indexOf
+
+`indexOf()` 메서드는 배열에서 지정된 요소를 찾을 수 있는 첫번째 인덱스를 반환하고 존재하지 않으면 -1을 반환한다. `indexOf()`는 엄격한 동등성(`===`)을 사용하여 검색 요소를 `Array`의 요소와 비교한다.
+
+> arr.indexOf(searchElement [, fromIndex])
+>
+> **매개변수**
+>
+> - `searchElement`: 탐색할 요소(대소문자를 구분한다.)
+> - `fromIndex` : 이 배열에서 searchElement 검색을 시작할 위치다. default는 0.
+
+```javascript
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(beasts.indexOf('bison'));    // 1
+console.log(beasts.indexOf('bison', 2)); // 4
+console.log(beasts.indexOf('giraffe'));  // -1
+```
+
