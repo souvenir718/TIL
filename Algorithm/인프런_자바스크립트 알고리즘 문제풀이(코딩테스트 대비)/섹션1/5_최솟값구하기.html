@@ -6,13 +6,10 @@
   <body>
     <script>
       function solution(arr) {
-        let answer,
-          min = Number.MAX_SAFE_INTEGER;
-
-        return answer;
+        return Math.min.apply(null, arr);
       }
 
-      let arr = [5, 7, 1, 3, 2, 9, 11];
+      let arr = [5, 7, 4, 3, 2, 9, 11];
       console.log(solution(arr));
     </script>
   </body>
