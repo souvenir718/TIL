@@ -300,3 +300,72 @@ console.log(beasts.indexOf('bison', 2)); // 4
 console.log(beasts.indexOf('giraffe'));  // -1
 ```
 
+
+
+### isArray()
+
+`Array.isArray()` 메서드는 인자가 **Array**인지 판별한다.
+
+```javascript
+Array.isArray([1, 2, 3]);  // true
+Array.isArray({foo: 123}); // false
+```
+
+
+
+### join()
+
+`join()` 메서드는 배열의 모든 요소를 연결해 하나의 문자열로 만든다.
+
+> arr.join([separator])
+>
+> **매개변수**
+>
+> - `separator` : 배열의 각 요소를 구분할 문자열을 지정한다. 생략하면 배열의 소도을이 쉼표로 구분된다.
+
+```javascript
+const ele = ['Hello', 'world', '!' ];
+
+console.log(ele.join()); // Hello,world,!
+console.log(ele.join("")); // Helloworld!
+console.log(ele.join(" "); // Hello world !
+
+```
+
+
+
+### keys()
+
+`keys()` 메서드는 배열의 각 인덱스를 키 값으로 가지는 새로운 **Array Iterator** 객체를 반환한다. `keys()`는 빈 인덱스를 무시하지 않는다.
+
+```javascript
+const arr1 = ['a', 'b', 'c'];
+const iter = arr1.keys();
+
+for(const key of iter){
+    console.log(key);
+}
+// 0
+// 1
+// 2
+```
+
+
+
+### lastIndexOf()
+
+`lastIndexOf()` 메서드는 배열에서 주어진 값을 발견할 수 있는 마지막 인덱스를 반환하고 요소가 없으면 -1을 반환한다. `lastIndexOf()`는 일치연산(`===`)을 사용해 비교한다.
+
+> **arr.lastIndexOf(searchElement[, fromIndex])**
+>
+> **매개변수**
+>
+> - `searchElement` : 배열에서 찾을 요소
+> - `fromIndex(opt)` : 역순으로 검색을 시작할 인덱스. 배열의 길이에서 1을 뺀 값이 기본값이다.
+
+```javascript
+const arr = ['d', 'b', 'c', 'd'];
+
+console.log(arr.lastIndexOf('d')); // 3
+```
+
