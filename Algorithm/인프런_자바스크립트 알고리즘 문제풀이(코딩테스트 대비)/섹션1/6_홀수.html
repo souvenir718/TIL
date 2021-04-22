@@ -7,7 +7,15 @@
     <script>
       function solution(arr) {
         let answer = [];
+        let newArr = [];
+        let sum = 0;
+        let min = 0;
+        arr.map((x) => (x % 2 === 0 ? null : newArr.push(x)));
 
+        min = Math.min.apply(null, newArr);
+        newArr.map((x) => (sum = sum + x));
+        answer.push(sum);
+        answer.push(min);
         return answer;
       }
 
