@@ -7,7 +7,7 @@
     <script>
       function solution(day, arr) {
         let answer = 0;
-
+        arr.map((x) => (x.toString()[1] == day ? (answer = answer + 1) : null));
         return answer;
       }
 
