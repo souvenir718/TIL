@@ -369,3 +369,66 @@ const arr = ['d', 'b', 'c', 'd'];
 console.log(arr.lastIndexOf('d')); // 3
 ```
 
+
+
+### map()
+
+`map()` 메서드는 배열 내의 모든 요소 각각에 대하여 주어진 함수를 호출한 결과를 모아 **새로운 배열**을 반환한다. `map()`은 호출한 배열의 값을 변형하지 않는다. 단, `callback` 함수에 의해서 변형될 수는 있다.
+
+> **arr.map(callback(currentValue[, index[, array]])[, thisArg])**
+>
+> **매개변수**
+>
+> - `callback` : 새로운 배열 요소를 생성하는 함수
+>   - `currentValue` : 처리할 현재 요소
+>   - `index` : 처리할 현재 요소의 인덱스
+>   - `array` : `map()`을 호출한 배열
+> - `thisArg` : `callback`을 실행할 때 `this`로 사용되는 값
+
+```javascript
+const arr1 = [1, 4, 9, 16];
+
+const m1 = arr1.map(x => x*2);
+console.log(m1) // [2, 8, 18, 32]
+```
+
+
+
+### of()
+
+`Array.of()` 메서드는 인자의 수나 유형에 관계없이 가변 인자를 갖는 새 `Array` 인스턴스를 만든다.
+
+`Array.of()`와 `Array` 생성자의 차이는 정수형 인자의 처리방법에 있다. `Array.of(7)`은 하나의 요소 **7**을 가진 배열을 생성하지만 `Array(7)`은 길이가 7일 빈 배열을 생성한다.
+
+```javascript
+Array.of(7); // [7]
+Array.of(1, 2, 3); // [1, 2, 3]
+```
+
+
+
+### pop()
+
+`pop()` 메서드는 배열에서 **마지막** 요소를 제거하고 그 요소를 반환한다.
+
+```javascript
+const arr = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+console.log(arr.pop()); // tomato
+console.log(arr); // ['broccoli', 'cauliflower', 'cabbage', 'kale']
+```
+
+
+
+### push()
+
+`push()` 메서드는 배열의 끝에 하나 이상의 요소를 추가하고 **배열의 새로운 길이**를 반환한다.
+
+```javascript
+const arr = ['pigs', 'goats', 'sheep'];
+
+const arr2 = arr.push('cows');
+console.log(arr); // 4
+console.log(arr); // ["pigs", "goats", "sheep", "cows"]
+```
+
