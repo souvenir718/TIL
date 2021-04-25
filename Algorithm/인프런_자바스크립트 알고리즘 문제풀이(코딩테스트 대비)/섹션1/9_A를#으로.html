@@ -6,28 +6,10 @@
   <body>
     <script>
       function solution(s) {
-        let answer = "";
-
-        return answer;
-      }
-
-      let str = "BANANA";
-      console.log(solution(str));
-    </script>
-  </body>
-</html>
-
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>출력결과</title>
-  </head>
-  <body>
-    <script>
-      function solution(s) {
-        let answer = s;
-
-        return answer;
+        return s
+          .split("")
+          .map((x) => (x === "A" ? (x = "#") : x))
+          .join("");
       }
 
       let str = "BANANA";
