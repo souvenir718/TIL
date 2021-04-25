@@ -432,3 +432,78 @@ console.log(arr); // 4
 console.log(arr); // ["pigs", "goats", "sheep", "cows"]
 ```
 
+
+
+### reduce()
+
+`reduce()` 메서드는 배열의 각 요소에 대해 주어진 **리듀서** 함수를 실행하고, 하나의 결과 값을 반환한다. **리듀서** 함수는 네 개의 인자를 갖는다. 누산기(acc), 현재 값(cur), 현재 인덱스(idx), 원본 배열(src). 반환 값은 누산기에 할당되고 누산기는 순회 중 유지되므로 최종 겨로가는 하나의 값이 된다.
+
+> **arr.reduce(callback, [ initialValue])**
+>
+> **매개변수**
+>
+> 1. `callback` : 배열의 각 요소에 대해 실행할 함수.
+>    - `accumulator` : 콜백의 반환값을 누적한다.  콜백의 이전 반환값 또는, 첫 호출이면서 `initialValue`를 제공한 경우에는 `intialValue`다.
+>    - `currentValue` : 처리할 현재 요소
+>    - `currentIndx`(opt) : 처리할 현재 요소의 인덱스. `initialValue`를 제공한 경우 0, 아니면 1부터 시작한다.
+>    - `array`(opt) : `reduce()`를 호출한 배열
+>    - `initialValue`(opt) : `callback`의 최초 호출에서 첫번째 인수에 제공하는 값. 초기값을 제공하지 않으면 배열의 첫번쨰 요소를 사용한다.
+
+```javascript
+const arr1 = [1, 2, 3, 4];
+const reducer = (acc, cur) => acc + cur;
+
+console.log(arr.reduce(reducer)); // 10
+console.log(arr.reduce(reducer, 5)); // 15
+5 + 1 + 2 + 3 + 4
+```
+
+
+
+### reverse()
+
+`reverse()` 메서드는 배열의 순서를 반전한다. 첫 요소는 마지막 요소가 되며 마지막 요소는 첫 요소가 된다.
+
+```javascript
+const arr1 = ['one', 'two', 'three'];
+console.log(arr1.reverse()); // three two one
+```
+
+
+
+### shift()
+
+`shift()` 메서드는 배열에서 첫 요소를 제거하고 제거된 요소를 반환한다. 이 메서드는 배열의 길이를 변하게 한다.
+
+```javascript
+const arr1 = [1, 2, 3];
+const firstEl = arr1.shift();
+console.log(arr1); // 2, 3
+console.log(firstEl); // 1
+```
+
+
+
+### slice()
+
+`slice()` 메서드는 어떤 배열의 `begin` 부터 `end`까지 (end 미포함)에 대한 얕은 복사본을 새로운 배열 객체로 반환한다. 원본 배열은 바뀌지 않는다.
+
+> **arr.slice([begin[, end]])**
+>
+> **매개변수**
+>
+> 1. `begin`(opt) : 0을 시작으로 하는 추출 시작점에 대한 인덱스를 의미한다.
+>    - 음수 인덱스는 배열의 끝에서부터 길이를 나타낸다. `slice(-2)`는 배열에서 마지막 두개의 엘리먼트를 추출한다.
+>    - `begin`이 명시되어있지 않으면, 0번 인덱스부터 `slice` 한다.
+> 2. `end`(opt) : 추출을 종료한 0 기준 인덱스다. `slice`는 `end` 인덱스를제외하고 추출한다.
+>    - `slice(2, -1)`은 세번째부터 끝에서 두번째 요소까지 추출한다.
+
+```javascript
+const arr1 = ['ant', 'bison', 'camel', 'duck', 'elephant'];
+
+console.log(arr1.slice(2));
+// ["camel", "duck", "elephant"]
+console.log(arr1.slice(2, 4));
+// ["camel", "duck"]
+```
+
