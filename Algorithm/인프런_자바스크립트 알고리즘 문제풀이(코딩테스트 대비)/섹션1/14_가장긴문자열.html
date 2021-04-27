@@ -8,7 +8,14 @@
       function solution(s) {
         let answer = "",
           max = Number.MIN_SAFE_INTEGER;
-
+        s.map((x, idx) => {
+          if (idx === 0) {
+            max = x.length;
+            answer = x;
+          } else {
+            answer = x.length >= max ? x : answer;
+          }
+        });
         return answer;
       }
       let str = ["teacher", "time", "student", "beautiful", "good"];
