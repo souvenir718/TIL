@@ -8,6 +8,11 @@
       function solution(s) {
         let answer = "";
 
+        s.split("").map((x) =>
+          x.charCodeAt() >= 97 && x.charCodeAt() <= 122
+            ? (answer += x.toUpperCase())
+            : (answer += x.toLowerCase())
+        );
         return answer;
       }
 
