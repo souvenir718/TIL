@@ -18,8 +18,6 @@
 
 🧱 [Spanish](https://github.com/souvenir718/TIL/tree/master/Spanish)
 
-🧱 [lecture](https://github.com/souvenir718/TIL/tree/master/lecture)
-
 🧱 [Certificate](https://github.com/souvenir718/TIL/tree/master/Certificate)
 
 🧱 [모르는 용어 정리](https://github.com/souvenir718/TIL/blob/master/%EC%9A%A9%EC%96%B4%20%EC%A0%95%EB%A6%AC%EB%85%B8%ED%8A%B8.md)
