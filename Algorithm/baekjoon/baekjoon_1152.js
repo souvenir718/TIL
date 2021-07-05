@@ -6,8 +6,10 @@ const rl = readline.createInterface({
 });
 
 rl.on("line", function (line) {
-  console.log(line.split(" ").length);
-
+  const answer = line.split(" ");
+  let answerLength = answer.length;
+  answer.map((tmp) => (tmp === "" ? (answerLength = answerLength - 1) : null));
+  console.log(answerLength);
   rl.close();
 }).on("close", function () {
   process.exit();
