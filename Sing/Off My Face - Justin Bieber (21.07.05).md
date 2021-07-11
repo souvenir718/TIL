@@ -54,6 +54,71 @@ But I'm forever ruined by you, ooh-ooh-ooh
 
 
 
+Can't sleep 'cause I'm way too buzzed
+
+**캔슬립커즈암웨이트버ㅈ**
+
+Too late, now you're in my blood
+
+**투-레읻나유인마아블러ㄷ**
+
+I don't hate the way you keep me up
+
+**도온헤잍더웨이이유킵미어어업**
+
+Your touch blurred my vision
+
+**여어터어치브ㄹ럳마아비젼**
+
+It's your world and I'm just in it
+
+**츄얼월댄암저스티니잇**
+
+Even sober I'm not thinkin' straight
+
+**이이븐소버람낫띤키인스트레~~이** 
+
+'Cause I'm off my face, in love with you
+
+**커자암오ㅂ마아페이s인러어ㅂ위이드유**
+
+I'm out my head, so into you
+
+**아아마웃마아헫소이인ㅌ유우**
+
+And I don't know how you do it
+
+**애나도오노오하아유두잇**
+
+But I'm forever ruined by you, ooh-ooh-ooh
+
+**버다암포오레버루인바아이유우 우우우**
+
+Ooh, ooh-ooh, ooh-ooh-ooh-ooh
+
+Ooh-ooh-ooh
+
+Ooh, ooh-ooh, ooh-ooh-ooh-ooh
+Ooh-ooh-ooh
+
+'Cause I'm off my face, in love with you
+
+**커자암오ㅂ마아페이s인러어ㅂ위이드유**
+
+I'm out my head, so into you
+
+**아아마웃마아헫소이인ㅌ유우**
+
+And I don't know how you do it
+
+**애나도오노오하아유두잇**
+
+But I'm forever ruined by you, ooh-ooh-ooh
+
+**버다암포오레버루인바아이유우 우우우**
+
+By you, ooh-ooh-ooh
+
 ## 레슨 피드백 (21.07.11)
 
 1. 노래에 대한 빌드를 생각해보기
