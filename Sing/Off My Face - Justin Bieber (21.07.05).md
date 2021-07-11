@@ -51,3 +51,11 @@ And I don't know how you do it
 But I'm forever ruined by you, ooh-ooh-ooh
 
 **버다암포오레버루인바아이유우 우우우**
+
+
+
+## 레슨 피드백 (21.07.11)
+
+1. 노래에 대한 빌드를 생각해보기
+2. 음의 높이와는 반대로 생각해서 부르기
+3. 2절까지 연습
