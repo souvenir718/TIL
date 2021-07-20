@@ -14,7 +14,7 @@ Riding all these highs
 
 Waiting for the comedown
 
-**웨잇인퍼더커-엄다운**
+**웨잇인for더커-엄다운**
 
 Walk these streets with me
 
@@ -30,11 +30,11 @@ Just glad that I can breathe, yeah
 
 I'm trying to realize
 
-**암트라이인트리이얼라잊**
+**암트라이인.트리이얼라잊**
 
 It's alright to not be fine
 
-**이처얼라이트 나앗비파아아인**
+**이처얼라이.트 나앗비파아아인**
 
 On your own
 
@@ -42,7 +42,7 @@ On your own
 
 Now I'm shaking, drinking all this coffee
 
-**나우암쉐이키인드린킨얼디스커어피**
+**나우암쉐이키인.드린킨얼디스커어피**
 
 These last few weeks have been exhausting
 
