@@ -10,6 +10,8 @@
 
 ## RxJS
 
+ **RxJS**는 핵심 타입 `Observable`과 위성 타입(`Observer`, `Scheduler`, `Subjects`) 그리고 Array 메소드에서 착안한 operators(`map`, `filter`, `reduce`, `every`...)를 제공하여 비동기 이벤트를 제어
+
 - `observable`을 사용하여 비동기 및 이벤트 기반의 프로그램을 작성하기 위한 라이브러리
 - 동기, 비동기에 구분없이 일관된 코드를 작성할 수 있는 라이브러리
 - `RxJS`는 Iterator Pattern과 Observer Pattern을 결합하여 이벤트를 관리하기 위한 효율적인 방법 제공
