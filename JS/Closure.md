@@ -111,3 +111,50 @@ foo();
 ```
 
  `let color` 를 `if` 블록 내부에서 선언하였기 때문에 `if` 블록 내부에서 참조할 수 있으며 그 밖의 영역에서 잘못된 참조로 에러가 발생한다.
+
+
+
+## 예재
+
+### 1.
+
+```javascript
+var outer = function () {
+    var a = 1;
+    var inner = function () {
+        console.log(++a);
+    };
+    inner();
+}
+outer();
+```
+
+![](C:\Users\INNOGRID\Documents\김수빈\TIL\Images\Closure_1.png) 
+
+
+
+### 2.
+
+```javascript
+var outer = function() {
+    var a = 1;
+    var inner = function() {
+        return ++a;
+    }
+    return inner;
+}
+var outer2 = outer(); // outer2에는 inner함수
+console.log(outer2()); // 출력 : 2
+console.log(outer2()); // 출력 : 3
+```
+
+![](C:\Users\INNOGRID\Documents\김수빈\TIL\Images\Closure_2.png) 
+
+> a가 사라지지 않는다.
+
+
+
+---
+
+출처 : [JS - Flow](https://www.inflearn.com/course/%ED%95%B5%EC%8B%AC%EA%B0%9C%EB%85%90-javascript-flow/dashboard)
+
