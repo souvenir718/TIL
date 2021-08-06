@@ -141,3 +141,11 @@ And there's one thing that I need from you
 
 
 Can you come through
+
+
+
+## 레슨 피드백(21.07.25)
+
+1. 인중을 길게해서 o 입모양으로 먼저 한옥타브 내려서 연습
+2. 그 형태에서 발음 얹어서 해보기
+3. 빌드 그리고 진행해보기
