@@ -90,3 +90,8 @@ Say something, I'm giving up on you
 
 Say something...
 
+
+
+## 레슨 피드백 (21.08.15)
+
+1. 혀를 세우고 영구개를 열어서 소리가 앞으로 뻗지 못하게
