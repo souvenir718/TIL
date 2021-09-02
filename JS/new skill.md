@@ -219,8 +219,48 @@ function displayUser() {
 
 
 
+## 십진수 지수
+
+0이 많은 숫자를 적을때 사용
+
+```js
+for(let i=0; i<10000; i++){}
+//
+for(let i=0; i<1e4; i++){}
+
+1e0 = 1;
+1e1 = 10;
+1e2 = 100;
+1e3 = 1000
+```
+
+
+
+## 필수 파라미터
+
+자바스크립트는 기본적으로 함수의 파라미터를 받지 않았을 경우, `undefined`로 지정한다. 
+
+```js
+function test(x) {
+    if(x === undefined) throw new Error('No Parameter')
+    return x;
+}
+// 아래와 같이 변경
+mandatory = () => {
+    throw new Error('Missing parameter!');
+}
+const test = (x = mandatory()) => {
+    return x;
+}
+
+```
+
+
+
 
 
 ---
 
 [참고1 - 드림코딩](https://www.youtube.com/watch?v=BUAhpB3FmS4)
+
+[참고2](https://chanspark.github.io/2017/11/28/ES6-%EA%BF%80%ED%8C%81.html)
