@@ -1,0 +1,47 @@
+body {
+  padding: 12px;
+  font-family: sans-serif;
+}
+#keyword {
+  width: 200px;
+  height: 24px;
+  line-height: 24px;
+  margin-bottom: 8px;
+  padding: 2px 8px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+#result {
+  width: 200px;
+}
+#result article {
+  width: 192px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 12px;
+  border: 1px solid #ddd;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+#result article:not(:last-child) {
+  border-bottom: 0;
+}
+#result article:first-child {
+  border-radius: 4px 4px 0 0;
+}
+#result article:last-child {
+  border-radius: 0 0 4px 4px;
+}
+#result article:hover {
+  background-color: white;
+  color: dodgerblue;
+}
+#result .searching {
+  width: 192px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 12px;
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 4px;
+}
