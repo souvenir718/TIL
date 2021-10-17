@@ -5,14 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@reactivex/rxjs/dist/global/rxjs.umd.js"></script>
-    <script defer src="animation_paint/animation_paint.js"></script>
-    <script src="https://unpkg.com/@reactivex/rxjs/dist/global/rxjs.umd.js"></script>
+    <script defer src="typing/typing.js"></script>
 
     <link rel="stylesheet" href="index.css" />
     <title>RxJS</title>
   </head>
   <body>
-    <canvas
+    <div id="given"></div>
+    <input id="input" type="text" /> <button id="start">Start</button>
+    <br />
+    <div id="logs"></div>
+
+    <!-- <canvas
       id="canvas"
       width="600"
       height="360"
@@ -25,7 +29,7 @@
       concatMap
       <input type="radio" name="wm" id="switchMap" value="switchMap" />
       switchMap
-    </div>
+    </div> -->
     <!-- <input id="keyword" type="text" />
     <br />
     <div id="result"></div> -->
