@@ -5,15 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://unpkg.com/@reactivex/rxjs/dist/global/rxjs.umd.js"></script>
-    <script defer src="smart_search/smart_search.js"></script>
+    <script defer src="animation_paint/animation_paint.js"></script>
+    <script src="https://unpkg.com/@reactivex/rxjs/dist/global/rxjs.umd.js"></script>
+
     <link rel="stylesheet" href="index.css" />
     <title>RxJS</title>
   </head>
   <body>
-    <script src="https://unpkg.com/@reactivex/rxjs/dist/global/rxjs.umd.js"></script>
-
-    <input id="keyword" type="text" />
+    <canvas
+      id="canvas"
+      width="600"
+      height="360"
+      style="background: #eee"
+    ></canvas>
+    <div>
+      <input type="radio" name="wm" id="mergeMap" value="mergeMap" checked />
+      mergeMap
+      <input type="radio" name="wm" id="concatMap" value="concatMap" />
+      concatMap
+      <input type="radio" name="wm" id="switchMap" value="switchMap" />
+      switchMap
+    </div>
+    <!-- <input id="keyword" type="text" />
     <br />
-    <div id="result"></div>
+    <div id="result"></div> -->
   </body>
 </html>
