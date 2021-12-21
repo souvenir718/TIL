@@ -94,3 +94,10 @@ Javascript가 실행되면 빈 HTML 페이지 안에 마크업을 추가해주�
 
 CMS나 파일 등의 데이터 소스를 GraphQL로 가져와 빌드할 때 정적파일의 데이터로 포함한다.
 
+
+
+
+
+---
+
+[참고자료](https://velog.io/@mnz/Gatsby-Gatsby-%EA%B0%9C%EB%85%90-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B3%A0-%ED%8A%9C%ED%86%A0%EB%A6%AC%EC%96%BC-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
