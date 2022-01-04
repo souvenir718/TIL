@@ -177,3 +177,5 @@ fromEvent(button, 'click').pipe(
 [참고3 - 유용하게 사용하는 RxJS문법 추천](https://gguldh.tistory.com/59)
 
 [참고4 - rxjs example(github)](https://myhappyman.tistory.com/108)
+
+[참고5](https://min9nim.vercel.app/2020-04-24-rxjs/)
