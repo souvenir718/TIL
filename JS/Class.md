@@ -4,6 +4,55 @@
 
 
 
+### 예시 
+
+```js
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+Person.prototype.getName = function (params){
+    return this.name + '입니다.';
+}
+
+// 위의 코드를 클래스로 변경
+class Person {
+    constructor(name, age){
+        this.name = name;
+        this.age = age;
+    }
+    getName() {
+        return this.name + '입니다.'
+    }
+}
+
+//생성자 함수와 클래스로 인스턴스를 생성하는 방법은 동일하다.
+const newInstanceFunc = new Person('subin', 29);
+const newInstanceClass = new Person('subin', 29);
+
+// 클래스 확장 (extends, 상속)
+// Super Class
+class Animal {
+    constructor(name, sound) {
+        this.name = name;
+        this.sound = sound;
+    }
+    getInfo() {
+        return this.name + '가 ' + this.sound + ' 소리를 낸다.';
+    }
+}
+
+//sub Class
+class Friend extends Animal {
+    constructor(name, sound){
+        //기존 생성자 함수에서는 call 메서드를 사용함
+        super(name, sound);
+    }
+}
+```
+
+
+
 ### 클래스는 선언문 또는 표현식으로 선언할 수 있다.
 
 ```javascript
