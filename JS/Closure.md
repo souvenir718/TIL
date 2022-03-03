@@ -114,6 +114,103 @@ foo();
 
 
 
+## 클로저 활용 및 은닉화
+
+```js
+function a() {
+    let temp = 'a';
+    
+    return temp;
+}
+
+const result = a();
+console.log(temp); // temp is not defined
+
+///
+
+function privateData() {
+    let temp = 'a';
+    
+    return {
+        value: function(){
+            return temp;
+        },
+        changeValue: function(newVal){
+            temp = newVal;
+        }
+    }
+}
+
+const private = privateData();
+const private2 = privateData();
+console.log(private.value()); // a
+private.changeValue('b');
+console.log(private.value()); // b
+console.log(private2.value()); // a
+```
+
+
+
+```js
+function CounterApp(initValue){
+    let countValue = initValue ?? 0;
+    
+    return  {
+        value: function(){
+            return countValue;
+        },
+        increment: function(){
+            countValue++;
+        },
+        decrement: function(){
+            countValue--;
+        }
+    }
+}
+const counter1 = CounterApp(1);
+const counter1 = CounterApp(2);
+
+counter1.value(); // 1
+counter2.value(); // 2
+
+counter1.increment();
+counter1.increment();
+counter1.increment();
+counter1.increment();
+
+counter1.value(); // 5
+counter2.value(); // 2
+```
+
+
+
+## debounce와 throttle
+
+이벤트가 실행할 때 과하게 실행되는걸 지연주는 기법(무한 스크롤, 과도한 클릭)
+
+```js
+buttonElement.addEventListener(
+	'click',
+    debounce(handleClick, 500)
+);
+
+function debounce(func, timeout=300){
+    let timer;
+    
+    return (...args) => {
+        clearTimeout(timer);
+        
+        timer = setTimeout(() => {func.apply(this, args);})
+    }
+}
+```
+
+
+
+
+
+
+
 ## 예재
 
 ### 1.
