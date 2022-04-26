@@ -17,6 +17,7 @@ function solution(A, K) {
 function solution(A, K) {
   if (A.length === 0) return [];
   let arr = A;
+
   for (let i = 0; i < K; i++) {
     arr.unshift(arr.pop());
   }
