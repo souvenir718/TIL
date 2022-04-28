@@ -101,7 +101,78 @@ sayName.call({name: 'subin'})	// subin
 
 ### closure
 
+: 클로저는 독립적인 변수를 가리키는 함수이다. 또는, 클로저 안에 정의된 함수는 만들어진 환경을 `기억한다.`(MDN)
+
+흔히 함수 내에서 함수를 정의하고 사용하면 클로저라고 하며, 대개 정의한 함수를 리턴하고 사용은 바깥에서 한다.
+
+```javascript
+function getClosure(){
+    const text = 'closure';
+    return function(){
+        return text;
+    }
+}
+const closure = getClosure();
+console.log(closure()); // closure
+```
+
+위의 코드에서 정의한 `getClosure()`는 함수를 반호나하고 반환된 함수는 내부에서 선언된 변수를 참조하고 있다. 이 참조된 변수는 함수 실행이 끝났다고 해서 사라지지 않고, 제대로 값을 반환하는 것을 볼 수 있다.
+
+#### 클로저를 통한 은닉화
+
+```javascript
+function Hello(name){
+    this._name = name;
+}
+
+Hello.prototype.say = function(){
+    console.log(`Hello ${this._name}`);
+}
+
+const hello1 = new Hello('수빈');
+const hello2 = new Hello('빈수');
+
+hello1.say(); // Hello 수빈
+hello2.say(); // Hello 빈수
+hello1._name = '변경';
+hello1.say(); // Hello 변경
+
+/*
+	위의 코드에서 _name 변수는 외부에서 쉽게 변경이 가능하다. 
+	클로저를 이용하여 이러한 접근을 제한할 수 있다.
+*/
+function hello(name){
+    const _name = name;
+    return function(){
+        console.log(`Hello ${_name}`)
+    }
+}
+
+const hello1 = hello('수빈');
+const hello2 = hello('빈수');
+
+hello1(); // Hello 수빈
+hello2(); // Hello 빈수
+
+/*
+	클로저는 각자의 환경을 갖는다. 클로저를 통해 내부 변수를 참조하는 동안에는 변수가 차지하는 메모리를 회수하지 않는다.
+	따라서 클로저 사용이 끝나면 참조를 제거하는 것이 좋다.
+*/
+hello1 = null;
+hello2 = null;
+```
+
+
+
+
+
 ### http 메소드
+
+### 이벤트 루프
+
+
+
+
 
 ### flux 아키텍쳐
 
