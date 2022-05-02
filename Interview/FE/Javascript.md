@@ -2,7 +2,7 @@
 
 
 
-### 화살표 함수
+## 화살표 함수
 
 화살표 함수는 함수를 선언할 때 this에 바인딩할 객체가 정적으로 결정된다. 일반 함수와 달리 언제나 상위 스코프의 this를 가리킨다.`Lexical this`라고 한다.
 
@@ -51,7 +51,9 @@ obj.myFunc()
 
 
 
-### 호이스팅
+## 호이스팅
+
+
 
 ## this
 
@@ -93,13 +95,11 @@ sayName.apply({name: 'subin'})	// subin
 sayName.call({name: 'subin'})	// subin
 ```
 
-
-
 ### apply, call, bind가 무엇이고 왜 사용하는지
 
 
 
-### closure
+## closure
 
 : 클로저는 독립적인 변수를 가리키는 함수이다. 또는, 클로저 안에 정의된 함수는 만들어진 환경을 `기억한다.`(MDN)
 
@@ -164,21 +164,51 @@ hello2 = null;
 
 
 
-
-
-### http 메소드
-
-### 이벤트 루프
+## http 메소드
 
 
 
+## 이벤트 루프
+
+: 자바스크립트는 단일 스레드기반 언어여서 한번에 하나씩 밖에 실행할 수 있지만, `Web API, Callback Queue, Event Loop`덕분에 멀티스레드처럼 보여진다.
 
 
-### flux 아키텍쳐
 
-### 웹팩 역할
+#### Web API
 
-### 바벨 역할
+: JS Engine 밖에 있으며 브라우저에서 제공하는 API로, Ajax, Timeout 등이 있다. `Call Stack`에서 실행된 비동기 함수는 Web API를 호출하고 Web API는 콜백함수를 Callback Queue에 밀어넣는다.
+
+
+
+#### Callback Queue
+
+: 비동기적으로 실행된 콜백함수가 보관되는 영역이다.
+
+> ex) setTimeout에서 타이머 완료후 실행되는 함수, addEventListener에서 이벤트가 발생했을 때 실행되는 함수 등이 보관된다.
+
+
+
+#### Event Loop
+
+: `Call Stack`과 `Callback Queue`의 상태를 체크하여 **Call Stack이 빈 상태가 되면 Callback Queue의 첫번째 콜백을 Call Stack으로 밀어넣는다.**
+
+>**진행과정**
+>
+>- V8 엔진에서 코드가 실행되면, Call Stack에 쌓인다.
+>- Stack의 선입후출의 룰에 따라 제일 마지막에 들어온 함수가 먼저 실행되며, Stack에 쌓여진 함수가 모두 실행된다.
+>  - 비동기함수가 실행된다면, Web API가 호출된다.
+>  - Web API는 비동기함수의 콜백함수를 Callback Queue에 밀어넣는다.
+>  - Event Loop는 Call Stack이 빈 상태가 되면 Callback Queue에 있는 첫번째 콜백을 Call Stack으로 이동시킨다.
+
+
+
+## 이벤트 캡처링
+
+## flux 아키텍쳐
+
+## 웹팩 역할
+
+## 바벨 역할
 
 
 
