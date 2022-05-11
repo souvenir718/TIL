@@ -125,6 +125,21 @@ foo2 = function() {		// 함수 표현식
 
 
 
+### var vs let vs const
+
+|                      | var  | let  | const |
+| :------------------: | :--: | :--: | :---: |
+|     global scope     |  O   |  X   |   X   |
+|     script scope     |  X   |  O   |   O   |
+| function local scope |  O   |  O   |   O   |
+|     block scope      |  X   |  O   |   O   |
+|        재선언        |  O   |  X   |   X   |
+|        재할당        |  O   |  O   |   X   |
+
+
+
+
+
 ## this
 
 this는 함수를 호출할 때 결정된다. 함수를 호출할 때 this가 특별한 동작을 하지 않을때는 보통 window를 호출한다. 함수를 호출할 때, 객체가 붙을 경우에는 `this`는 객체가 된다. 
