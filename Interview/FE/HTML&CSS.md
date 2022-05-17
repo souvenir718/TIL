@@ -10,7 +10,13 @@
 
 ## Box Model
 
-: 모든 HTML 요소는 박스모양으로 구성되며 HTML 요소를 padding, border, margin, 내용으로 구분한다.
+: 모든 HTML 요소는 박스모양으로 구성되며 HTML 요소를 padding, border, margin, 내용으로 구분한다. 내용은 텍스트나 이미지가 들어가있는 박스의 실질적인 부분으로 색상, 너비, 높이 등을 지정할 수 있다. 패딩은 내용과 테두리 사이의 간격이다. 패딩은 눈에 보이지 않는다. 테두리(border)는 내용과 패딩 주변을 감싸는 테두리이다. 마진은 테두리와 이웃하는 요소 사이의 간격이고 마진은 눈에 보이지 않는다.
+
+
+
+## Flex
+
+ Flex는 컨텐츠를 감싸는 상위 부모요소인 Flex Container와 각 컨텐츠들인 자식요소 Flex Item으로 구성되어있다. Flexbox css 적용방법은 부모요소인 container에 display:flex를 선언하면 된다. Flex Container에는 전체적인 정렬과 관련된 속성인 display, flex-direction, align-items, flex-wrap 같은 속성을 정의하고, 자식요소인 flex item에는 flex-grow, flex-shrink 같은 크기나 순서 같은 속성을 정의한다.
 
 
 
