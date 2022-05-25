@@ -2,6 +2,16 @@
 
 ## Life Cycle
 
+리액트는 컴포넌트 기반의 View를 중심으로 한 라이브러리다. 각각의 컴포넌트에는 라이프사이클(수명주기)가 존재하고 수명은 보통 페이지에서 렌더링되기 전 준비과정에서부터 페이지에서 사라질때 끝이 난다. 컴포넌트가 처음 실행될때인 Mount, 데이터에 변화가있을때인 Update, 컴포넌트가 제거 될때인 Unmount이렇게 세개로 나눌 수 있다.
+
+- 마운트 : DOM이 생성되고 브라우저 상에서 나타나는 것을 뜻한다.
+- 업데이트 
+  - props가 바뀌는 경우
+  - state가 바뀌는 경우
+  - 부모 컴포넌트가 리렌더링 되는 경우
+  - 강제로 렌더링할 경우
+- 언마운트 : DOM에서 제거되는 것을 뜻한다.
+
 ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F7lN4q%2FbtqzrHl8aDe%2FEtexE1KAyeO0GK31awPcW0%2Fimg.png) 
 
 
@@ -147,6 +157,14 @@ const scrollHeightReset = () => {
 
 ## useEffect
 
+컴포넌트가 렌더링될 때마다 특정 작업을 실행할 수 있도록 하는 Hook이다.
+
+- 컴포넌트가 마운트되거나 언마운트 혹은 업데이트 됐을때, 특정 작업을 처리할 수 있다.
+- 첫번째 인수로 실행할 콜백함수를 넣고 두번째 인수로 검사하고자 하는 특정 값이나 빈 배열을 넣는다.
+- 의존성 배열 검사할 때 얕은 비교를 진행한다.
+  - 참조 타입인 객체, 배열, 함수의 경우 내부 프로퍼티가 동일하다하여도 리렌더링이 발생한다.
+  - useCallback을 써서 참조 대상인 함수가 리렌더링이 발생할 때마다 새롭게 생성하지 않도록 한다.
+
 ```jsx
 useEffect(() => {
   console.log("컴포넌트가 화면에 나타남");
@@ -171,6 +189,30 @@ useEffect(() => {
 >
 > - `setInterval`을 통한 반복작업, `setTimeout`을 통한 작업 clear하기(`clearInterval`, `clearTimeout`)
 > - 라이브러리 인스턴스 제거
+
+
+
+## useLayoutEffect
+
+: DOM이 변경되고나서 동기적으로 실행이 된다. 브라우저가 화면을 그리기 전에 실행이 되기 때문에 스크롤 위치를 얻어오거나 다른 DOM 엘리먼트의 스타일을 조작할 때 사용하면 효율적이다.
+
+- DOM이 업데이트 되면 바로 동기적으로 실행이 되고 이 과정은 브라우저가 화면에 렌더링하기 이전에 수행되어 사용자는 업데이트 되기 전의 화면을 보지 않게 된다.
+
+
+
+### useEffect vs useLayoutEffect
+
+: 렌더링 이전에 무언가를 하고 싶다면 `useLayoutEffect`를 사용하고 렌더링 이후에 무언가를 하고 싶다면 `useEffect`를 사용
+
+- useEffect
+  - 화면에 그려진 후 비동기적으로 실행된다. 따라서 이벤트 핸들러 설정과 같이 렌더링 이후에 진행해야하는 작업에 적합하다.
+  - 컴포넌트 렌더링 - 화면 업데이트 - useEffect 실행
+  - 비동기적 실행
+- useLayoutEffect
+  - 렌더링 직후 화면이 업데이트 되기 전에 동기적으로 실행된다. 따라서 DOM 변경과 같이 렌더링이 이루어지기 전에 진행해야 하는 작업에 적합하다.
+  - 컴포넌트 렌더링 - useLayoutEffect - 화면 업데이트
+  - 동기적으로 실행
+  - 렌더링 직후 DOM요소의 값을 읽을 때 유용
 
 
 
@@ -208,6 +250,22 @@ const onRemove = useCallback(
   [users]
 );
 ```
+
+
+
+### React.memo
+
+`useCallback` 사용만으로 하위 컴포넌트의 리렌더링을 막을 수 없다. 하위 컴포넌트가 참조 동일성에 의존적인, 최적화된 Purecomponent이어야만 불필요한 리렌더링을 막을 수 있다.
+
+`React.memo`는 `shouldComponentUpdate` 가 기본으로 내장된 함수형 컴포넌트로 보면 된다. 얕은 비교 연산을 통해 동일한 참조 값의 prop이 들어온다면 리렌더링을 방지시킨다.
+
+`React.memo`는 고차 컴포넌트(HOC:Higher Order Component)로 `React.PureComponent`와 비슷하지만 class가 아니라 함수형 컴포넌트이다. 함수 컴포넌트가 동일한 props로 동일한 결과를 렌더링한다면, `React.memo`를 호출하고 결과를 메모이징하도록 래핑하여 성능향상을 확인할 수 있다. 
+
+`React.memo`는 props 변화에만 영향을 준다. props가 갖는 복잡한 객체에 대하여 얕은 비교만을 수행하는 것이 기본 동작이며 다른 비교 동작을 원한다면 두번째 인자로 별도의 비교 함수를 제공하면 된다.
+
+> **shouldComponentUpdate()**
+>
+> : props 또는 state가 새로운 값으로 갱신되어서 렌더링이 발생하기 직전에 호출된다.
 
 
 
