@@ -24,7 +24,7 @@
 
 <br/>
 
-### 🧾 [이력서](https://github.com/souvenir718/TIL/blob/master/%EA%B9%80%EC%88%98%EB%B9%88.pdf)
+### 🧾 [이력서](https://github.com/souvenir718/TIL/blob/master/%5B%EC%9D%B4%EB%A0%A5%EC%84%9C%5D_%EA%B9%80%EC%88%98%EB%B9%88.pdf)
 
 
 
